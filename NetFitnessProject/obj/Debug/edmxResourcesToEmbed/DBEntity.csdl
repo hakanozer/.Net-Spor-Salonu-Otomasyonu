@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sporModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="adminGiri">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sifre" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="soyadi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="seviye" Type="Byte" />
+    <Property Name="mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="branslar">
+    <Key>
+      <PropertyRef Name="bransID" />
+    </Key>
+    <Property Name="bransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriID" Type="Int32" />
+    <Property Name="bransAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="demirbaslar">
+    <Key>
+      <PropertyRef Name="demirbasID" />
+    </Key>
+    <Property Name="demirbasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="serino" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="markasi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fiyati" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="alinmaTarihi" Type="DateTime" Precision="3" />
+    <Property Name="bakimAraligi" Type="Byte" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="hocalar">
+    <Key>
+      <PropertyRef Name="hocaID" />
+    </Key>
+    <Property Name="hocaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adminID" Type="Int32" />
+    <Property Name="bransID" Type="Int32" />
+    <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cep" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="resim" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="kategoriler">
+    <Key>
+      <PropertyRef Name="kategoriID" />
+    </Key>
+    <Property Name="kategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="paketler">
+    <Key>
+      <PropertyRef Name="paketID" />
+    </Key>
+    <Property Name="paketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriID" Type="Int32" />
+    <Property Name="paketAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="gun" Type="Byte" />
+    <Property Name="ucret" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="programlar">
+    <Key>
+      <PropertyRef Name="programID" />
+    </Key>
+    <Property Name="programID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hocaID" Type="Int32" />
+    <Property Name="kullaniciID" Type="Int32" />
+    <Property Name="baslik" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="icerik" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="satislar">
+    <Key>
+      <PropertyRef Name="satisID" />
+    </Key>
+    <Property Name="satisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeID" Type="Int32" />
+    <Property Name="paketID" Type="Int32" />
+    <Property Name="hocaID" Type="Int32" />
+    <Property Name="odemeTuru" Type="Byte" />
+    <Property Name="ucret" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="baslamaTarih" Type="DateTime" Precision="3" />
+    <Property Name="bitisTarihi" Type="DateTime" Precision="3" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="silinen_Uyeler">
+    <Key>
+      <PropertyRef Name="uyeID" />
+    </Key>
+    <Property Name="uyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sifre" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="soyadi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dosya" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dogumTarihi" Type="DateTime" Precision="3" />
+    <Property Name="cinsiyet" Type="Byte" />
+    <Property Name="tcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+    <Property Name="uyelikDurumu" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sirketBilgileri">
+    <Key>
+      <PropertyRef Name="sirketID" />
+    </Key>
+    <Property Name="sirketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="unvan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="calismaBaslangic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="calismaBitis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="logo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="uyeler">
+    <Key>
+      <PropertyRef Name="uyeID" />
+    </Key>
+    <Property Name="uyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sifre" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="soyadi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dosya" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dogumTarihi" Type="DateTime" Precision="3" />
+    <Property Name="cinsiyet" Type="Byte" />
+    <Property Name="tcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+    <Property Name="uyelikDurumu" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="yorumlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="icerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+    <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="uyeID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="sporEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="adminGiris" EntityType="Self.adminGiri" />
+    <EntitySet Name="branslars" EntityType="Self.branslar" />
+    <EntitySet Name="demirbaslars" EntityType="Self.demirbaslar" />
+    <EntitySet Name="hocalars" EntityType="Self.hocalar" />
+    <EntitySet Name="kategorilers" EntityType="Self.kategoriler" />
+    <EntitySet Name="paketlers" EntityType="Self.paketler" />
+    <EntitySet Name="programlars" EntityType="Self.programlar" />
+    <EntitySet Name="satislars" EntityType="Self.satislar" />
+    <EntitySet Name="silinen_Uyeler" EntityType="Self.silinen_Uyeler" />
+    <EntitySet Name="sirketBilgileris" EntityType="Self.sirketBilgileri" />
+    <EntitySet Name="uyelers" EntityType="Self.uyeler" />
+    <EntitySet Name="yorumlars" EntityType="Self.yorumlar" />
+    <FunctionImport Name="demirbasGetir" ReturnType="Collection(sporModel.demirbasGetir_Result)" />
+    <FunctionImport Name="demirbasRapor" ReturnType="Collection(sporModel.demirbasRapor_Result)">
+      <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+      <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ekleme">
+      <Parameter Name="kullaniciID" Mode="In" Type="Int32" />
+      <Parameter Name="baslik" Mode="In" Type="String" />
+      <Parameter Name="icerik" Mode="In" Type="String" />
+      <Parameter Name="hocaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getSatis" ReturnType="Collection(sporModel.getSatis_Result)">
+      <Parameter Name="tcNO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getUye" ReturnType="Collection(sporModel.getUye_Result)">
+      <Parameter Name="tcNO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="guncelleme">
+      <Parameter Name="mail" Mode="In" Type="String" />
+      <Parameter Name="telefon" Mode="In" Type="String" />
+      <Parameter Name="cep" Mode="In" Type="String" />
+      <Parameter Name="adres" Mode="In" Type="String" />
+      <Parameter Name="sifre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="hocaGetirPro" ReturnType="Collection(sporModel.hocaGetirPro_Result)">
+      <Parameter Name="brns" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="hocalarRapor" ReturnType="Collection(sporModel.hocalarRapor_Result)">
+      <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+      <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="hocayaAitUyeGetirme" EntitySet="satislars" ReturnType="Collection(sporModel.satislar)">
+      <Parameter Name="hocaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="IDdenUyeGetir" ReturnType="Collection(sporModel.IDdenUyeGetir_Result)">
+      <Parameter Name="uyeid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="newProUyeGuncelle">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="adi" Mode="In" Type="String" />
+      <Parameter Name="soyadi" Mode="In" Type="String" />
+      <Parameter Name="telefon" Mode="In" Type="String" />
+      <Parameter Name="tc" Mode="In" Type="String" />
+      <Parameter Name="mail" Mode="In" Type="String" />
+      <Parameter Name="cinsiyet" Mode="In" Type="Byte" />
+      <Parameter Name="tarih" Mode="In" Type="DateTime" />
+      <Parameter Name="dogumTarihi" Mode="In" Type="DateTime" />
+      <Parameter Name="adres" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="paketlerRapor" ReturnType="Collection(sporModel.paketlerRapor_Result)">
+      <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+      <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="prcListele" ReturnType="Collection(sporModel.prcListele_Result)" />
+    <FunctionImport Name="pro_BransGetir" ReturnType="Collection(sporModel.pro_BransGetir_Result)" />
+    <FunctionImport Name="proMail" ReturnType="Collection(sporModel.proMail_Result)" />
+    <FunctionImport Name="proUyeIDAra" ReturnType="Collection(sporModel.proUyeIDAra_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="resimPro" ReturnType="Collection(String)">
+      <Parameter Name="gelenID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Satis_Ara" ReturnType="Collection(sporModel.Satis_Ara_Result)">
+      <Parameter Name="ara" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Satislari_Getir" ReturnType="Collection(sporModel.Satislari_Getir_Result)" />
+    <FunctionImport Name="sifreGetir" ReturnType="Collection(sporModel.sifreGetir_Result)" />
+    <FunctionImport Name="sirketbilgilergetir" ReturnType="Collection(sporModel.sirketbilgilergetir_Result)" />
+    <FunctionImport Name="updUyelik">
+      <Parameter Name="satisID" Mode="In" Type="Int32" />
+      <Parameter Name="satisFiyat" Mode="In" Type="Decimal" />
+      <Parameter Name="satisTarih" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Uye_Ara" ReturnType="Collection(sporModel.Uye_Ara_Result)">
+      <Parameter Name="ara" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uyedataGetir" ReturnType="Collection(sporModel.uyedataGetir_Result)">
+      <Parameter Name="uyeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uyeIDAra" ReturnType="Collection(DateTime)">
+      <Parameter Name="ara" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Uyeleri_Getir" ReturnType="Collection(sporModel.Uyeleri_Getir_Result)" />
+    <FunctionImport Name="uyelerRapor" ReturnType="Collection(sporModel.uyelerRapor_Result)">
+      <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+      <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Uyelik_Aktar">
+      <Parameter Name="alanID" Mode="In" Type="Int32" />
+      <Parameter Name="satisID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uyelikDondur">
+      <Parameter Name="uyeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="demirbasGetir_Result">
+    <Property Type="Int32" Name="demirbasID" Nullable="false" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="serino" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="markasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fiyati" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="alinmaTarihi" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="bakimAraligi" Nullable="true" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="demirbasRapor_Result">
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="serino" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="markasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fiyati" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getSatis_Result">
+    <Property Type="Int32" Name="satisID" Nullable="false" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="uyeID" Nullable="false" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="getUye_Result">
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="uyeID" Nullable="false" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="hocaGetirPro_Result">
+    <Property Type="Int32" Name="hocaID" Nullable="false" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cep" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="hocalarRapor_Result">
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+    <Property Type="Decimal" Name="satisUcreti" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="hocayaAitUyeGetirme_Result">
+    <Property Type="Int32" Name="satisID" Nullable="false" />
+    <Property Type="Int32" Name="uyeID" Nullable="true" />
+    <Property Type="Int32" Name="paketID" Nullable="true" />
+    <Property Type="Int32" Name="hocaID" Nullable="true" />
+    <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+    <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="uyeID1" Nullable="false" />
+    <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="dosya" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="cinsiyet" Nullable="true" />
+    <Property Type="String" Name="tcNo" Nullable="true" MaxLength="11" />
+    <Property Type="DateTime" Name="tarih1" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="IDdenUyeGetir_Result">
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="paketlerRapor_Result">
+    <Property Type="Int32" Name="paket" Nullable="true" />
+    <Property Type="String" Name="paketAdi" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="kategoriID" Nullable="true" />
+    <Property Type="Decimal" Name="paketUcreti" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="satisUcreti" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="prcListele_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="baslik" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="icerik" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+    <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="pro_BransGetir_Result">
+    <Property Type="Int32" Name="bransID" Nullable="false" />
+    <Property Type="Int32" Name="kategoriID" Nullable="true" />
+    <Property Type="String" Name="bransAdi" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Kategori_Adi" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="proMail_Result">
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="proUyeIDAra_Result">
+    <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="hocaID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Satis_Ara_Result">
+    <Property Type="Int32" Name="satisID" Nullable="false" />
+    <Property Type="Int32" Name="uyeID" Nullable="true" />
+    <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="hocaID" Nullable="true" />
+    <Property Type="Int32" Name="paketID" Nullable="true" />
+    <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Satislari_Getir_Result">
+    <Property Type="Int32" Name="satisID" Nullable="false" />
+    <Property Type="Int32" Name="uyeID" Nullable="true" />
+    <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="hocaID" Nullable="true" />
+    <Property Type="Int32" Name="paketID" Nullable="true" />
+    <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sifreGetir_Result">
+    <Property Type="Int32" Name="adminID" Nullable="false" />
+    <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="Byte" Name="seviye" Nullable="true" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sirketbilgilergetir_Result">
+    <Property Type="Int32" Name="sirketID" Nullable="false" />
+    <Property Type="String" Name="unvan" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="adres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="web" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="calismaBaslangic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="calismaBitis" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="logo" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Uye_Ara_Result">
+    <Property Type="Int32" Name="uyeID" Nullable="false" />
+    <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="dosya" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="cinsiyet" Nullable="true" />
+    <Property Type="String" Name="tcNo" Nullable="true" MaxLength="11" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uyedataGetir_Result">
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+    <Property Type="String" Name="uyeResim" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+    <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+    <Property Type="String" Name="hocaAdi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="hocaSoyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="paketAdi" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="Uyeleri_Getir_Result">
+    <Property Type="Int32" Name="uyeID" Nullable="false" />
+    <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="dosya" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="cinsiyet" Nullable="true" />
+    <Property Type="String" Name="tcNo" Nullable="true" MaxLength="11" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uyelerRapor_Result">
+    <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="satisUcreti" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+    <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

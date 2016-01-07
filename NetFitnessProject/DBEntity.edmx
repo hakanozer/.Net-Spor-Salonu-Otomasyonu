@@ -1,0 +1,1270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sporModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adminGiris">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kulAdi" Type="varchar" MaxLength="50" />
+          <Property Name="sifre" Type="varchar" MaxLength="32" />
+          <Property Name="adi" Type="varchar" MaxLength="255" />
+          <Property Name="soyadi" Type="varchar" MaxLength="255" />
+          <Property Name="seviye" Type="tinyint" />
+          <Property Name="mail" Type="varchar" MaxLength="255" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="branslar">
+          <Key>
+            <PropertyRef Name="bransID" />
+          </Key>
+          <Property Name="bransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kategoriID" Type="int" />
+          <Property Name="bransAdi" Type="varchar" MaxLength="255" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="demirbaslar">
+          <Key>
+            <PropertyRef Name="demirbasID" />
+          </Key>
+          <Property Name="demirbasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adi" Type="varchar" MaxLength="255" />
+          <Property Name="serino" Type="varchar" MaxLength="50" />
+          <Property Name="markasi" Type="varchar" MaxLength="50" />
+          <Property Name="fiyati" Type="varchar" MaxLength="50" />
+          <Property Name="alinmaTarihi" Type="datetime" />
+          <Property Name="bakimAraligi" Type="tinyint" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="hocalar">
+          <Key>
+            <PropertyRef Name="hocaID" />
+          </Key>
+          <Property Name="hocaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminID" Type="int" />
+          <Property Name="bransID" Type="int" />
+          <Property Name="adi" Type="varchar" MaxLength="50" />
+          <Property Name="soyadi" Type="varchar" MaxLength="50" />
+          <Property Name="telefon" Type="varchar" MaxLength="50" />
+          <Property Name="cep" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="500" />
+          <Property Name="mail" Type="varchar" MaxLength="255" />
+          <Property Name="tarih" Type="datetime" />
+          <Property Name="sifre" Type="varchar" MaxLength="50" />
+          <Property Name="resim" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="kategoriler">
+          <Key>
+            <PropertyRef Name="kategoriID" />
+          </Key>
+          <Property Name="kategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adi" Type="varchar" MaxLength="255" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="paketler">
+          <Key>
+            <PropertyRef Name="paketID" />
+          </Key>
+          <Property Name="paketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kategoriID" Type="int" />
+          <Property Name="paketAdi" Type="varchar" MaxLength="255" />
+          <Property Name="gun" Type="tinyint" />
+          <Property Name="ucret" Type="money" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="programlar">
+          <Key>
+            <PropertyRef Name="programID" />
+          </Key>
+          <Property Name="programID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hocaID" Type="int" />
+          <Property Name="kullaniciID" Type="int" />
+          <Property Name="baslik" Type="varchar" MaxLength="255" />
+          <Property Name="icerik" Type="varchar" MaxLength="5000" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="satislar">
+          <Key>
+            <PropertyRef Name="satisID" />
+          </Key>
+          <Property Name="satisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uyeID" Type="int" />
+          <Property Name="paketID" Type="int" />
+          <Property Name="hocaID" Type="int" />
+          <Property Name="odemeTuru" Type="tinyint" />
+          <Property Name="ucret" Type="money" />
+          <Property Name="baslamaTarih" Type="datetime" />
+          <Property Name="bitisTarihi" Type="datetime" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="silinen_Uyeler">
+          <Key>
+            <PropertyRef Name="uyeID" />
+          </Key>
+          <Property Name="uyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kulAdi" Type="varchar" MaxLength="50" />
+          <Property Name="sifre" Type="varchar" MaxLength="32" />
+          <Property Name="adi" Type="varchar" MaxLength="255" />
+          <Property Name="soyadi" Type="varchar" MaxLength="255" />
+          <Property Name="telefon" Type="varchar" MaxLength="50" />
+          <Property Name="mail" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="500" />
+          <Property Name="resim" Type="varchar" MaxLength="500" />
+          <Property Name="dosya" Type="varchar" MaxLength="500" />
+          <Property Name="dogumTarihi" Type="datetime" />
+          <Property Name="cinsiyet" Type="tinyint" />
+          <Property Name="tcNo" Type="varchar" MaxLength="11" />
+          <Property Name="tarih" Type="datetime" />
+          <Property Name="uyelikDurumu" Type="bit" />
+        </EntityType>
+        <EntityType Name="sirketBilgileri">
+          <Key>
+            <PropertyRef Name="sirketID" />
+          </Key>
+          <Property Name="sirketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="unvan" Type="varchar" MaxLength="50" />
+          <Property Name="telefon" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="50" />
+          <Property Name="mail" Type="varchar" MaxLength="50" />
+          <Property Name="web" Type="varchar" MaxLength="50" />
+          <Property Name="calismaBaslangic" Type="varchar" MaxLength="50" />
+          <Property Name="calismaBitis" Type="varchar" MaxLength="50" />
+          <Property Name="logo" Type="varchar" MaxLength="255" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="uyeler">
+          <Key>
+            <PropertyRef Name="uyeID" />
+          </Key>
+          <Property Name="uyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kulAdi" Type="varchar" MaxLength="50" />
+          <Property Name="sifre" Type="varchar" MaxLength="32" />
+          <Property Name="adi" Type="varchar" MaxLength="255" />
+          <Property Name="soyadi" Type="varchar" MaxLength="255" />
+          <Property Name="telefon" Type="varchar" MaxLength="50" />
+          <Property Name="mail" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="500" />
+          <Property Name="resim" Type="varchar" MaxLength="500" />
+          <Property Name="dosya" Type="varchar" MaxLength="500" />
+          <Property Name="dogumTarihi" Type="datetime" />
+          <Property Name="cinsiyet" Type="tinyint" />
+          <Property Name="tcNo" Type="varchar" MaxLength="11" />
+          <Property Name="tarih" Type="datetime" />
+          <Property Name="uyelikDurumu" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'spor.dbo.yorumlar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="yorumlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="icerik" Type="varchar" MaxLength="250" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="baslik" Type="varchar" MaxLength="50" />
+          <Property Name="uyeID" Type="int" />
+        </EntityType>
+        <Function Name="demirbasGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="demirbasRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tarih1" Type="datetime" Mode="In" />
+          <Parameter Name="tarih2" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="ekleme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="kullaniciID" Type="int" Mode="In" />
+          <Parameter Name="baslik" Type="varchar" Mode="In" />
+          <Parameter Name="icerik" Type="varchar" Mode="In" />
+          <Parameter Name="hocaID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fncHoca" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="brns" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="getSatis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tcNO" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="getUye" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tcNO" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="guncelleme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="telefon" Type="varchar" Mode="In" />
+          <Parameter Name="cep" Type="varchar" Mode="In" />
+          <Parameter Name="adres" Type="varchar" Mode="In" />
+          <Parameter Name="sifre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="hocaGetirPro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="brns" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="hocalarRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tarih1" Type="datetime" Mode="In" />
+          <Parameter Name="tarih2" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="hocayaAitUyeGetirme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="hocaID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="IDdenUyeGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uyeid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="newProUyeGuncelle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="adi" Type="varchar" Mode="In" />
+          <Parameter Name="soyadi" Type="varchar" Mode="In" />
+          <Parameter Name="telefon" Type="varchar" Mode="In" />
+          <Parameter Name="tc" Type="varchar" Mode="In" />
+          <Parameter Name="mail" Type="varchar" Mode="In" />
+          <Parameter Name="cinsiyet" Type="tinyint" Mode="In" />
+          <Parameter Name="tarih" Type="datetime" Mode="In" />
+          <Parameter Name="dogumTarihi" Type="datetime" Mode="In" />
+          <Parameter Name="adres" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="paketlerRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tarih1" Type="datetime" Mode="In" />
+          <Parameter Name="tarih2" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="prcListele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pro_BransGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proMail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proUyeIDAra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="resimPro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gelenID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Satis_Ara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ara" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Satislari_Getir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sifreGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sirketbilgilergetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="updUyelik" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="satisID" Type="int" Mode="In" />
+          <Parameter Name="satisFiyat" Type="money" Mode="In" />
+          <Parameter Name="satisTarih" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Uye_Ara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ara" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="uyedataGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uyeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="uyeIDAra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ara" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Uyeleri_Getir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="uyelerRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tarih1" Type="datetime" Mode="In" />
+          <Parameter Name="tarih2" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Uyelik_Aktar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="alanID" Type="int" Mode="In" />
+          <Parameter Name="satisID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="uyelikDondur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uyeID" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="sporModelStoreContainer">
+          <EntitySet Name="adminGiris" EntityType="Self.adminGiris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="branslar" EntityType="Self.branslar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="demirbaslar" EntityType="Self.demirbaslar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hocalar" EntityType="Self.hocalar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kategoriler" EntityType="Self.kategoriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="paketler" EntityType="Self.paketler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="programlar" EntityType="Self.programlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="satislar" EntityType="Self.satislar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="silinen_Uyeler" EntityType="Self.silinen_Uyeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sirketBilgileri" EntityType="Self.sirketBilgileri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uyeler" EntityType="Self.uyeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="yorumlar" EntityType="Self.yorumlar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [yorumlar].[ID] AS [ID], 
+    [yorumlar].[icerik] AS [icerik], 
+    [yorumlar].[Tarih] AS [Tarih], 
+    [yorumlar].[baslik] AS [baslik], 
+    [yorumlar].[uyeID] AS [uyeID]
+    FROM [dbo].[yorumlar] AS [yorumlar]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sporModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adminGiri">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="soyadi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="seviye" Type="Byte" />
+          <Property Name="mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="branslar">
+          <Key>
+            <PropertyRef Name="bransID" />
+          </Key>
+          <Property Name="bransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriID" Type="Int32" />
+          <Property Name="bransAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="demirbaslar">
+          <Key>
+            <PropertyRef Name="demirbasID" />
+          </Key>
+          <Property Name="demirbasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="serino" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="markasi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fiyati" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="alinmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="bakimAraligi" Type="Byte" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="hocalar">
+          <Key>
+            <PropertyRef Name="hocaID" />
+          </Key>
+          <Property Name="hocaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adminID" Type="Int32" />
+          <Property Name="bransID" Type="Int32" />
+          <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cep" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="resim" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="kategoriler">
+          <Key>
+            <PropertyRef Name="kategoriID" />
+          </Key>
+          <Property Name="kategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="paketler">
+          <Key>
+            <PropertyRef Name="paketID" />
+          </Key>
+          <Property Name="paketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriID" Type="Int32" />
+          <Property Name="paketAdi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="gun" Type="Byte" />
+          <Property Name="ucret" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="programlar">
+          <Key>
+            <PropertyRef Name="programID" />
+          </Key>
+          <Property Name="programID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hocaID" Type="Int32" />
+          <Property Name="kullaniciID" Type="Int32" />
+          <Property Name="baslik" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="icerik" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="satislar">
+          <Key>
+            <PropertyRef Name="satisID" />
+          </Key>
+          <Property Name="satisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uyeID" Type="Int32" />
+          <Property Name="paketID" Type="Int32" />
+          <Property Name="hocaID" Type="Int32" />
+          <Property Name="odemeTuru" Type="Byte" />
+          <Property Name="ucret" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="baslamaTarih" Type="DateTime" Precision="3" />
+          <Property Name="bitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="silinen_Uyeler">
+          <Key>
+            <PropertyRef Name="uyeID" />
+          </Key>
+          <Property Name="uyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="soyadi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="dosya" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="dogumTarihi" Type="DateTime" Precision="3" />
+          <Property Name="cinsiyet" Type="Byte" />
+          <Property Name="tcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+          <Property Name="uyelikDurumu" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="sirketBilgileri">
+          <Key>
+            <PropertyRef Name="sirketID" />
+          </Key>
+          <Property Name="sirketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="unvan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calismaBaslangic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calismaBitis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="logo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="uyeler">
+          <Key>
+            <PropertyRef Name="uyeID" />
+          </Key>
+          <Property Name="uyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="adi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="soyadi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="dosya" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="dogumTarihi" Type="DateTime" Precision="3" />
+          <Property Name="cinsiyet" Type="Byte" />
+          <Property Name="tcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+          <Property Name="uyelikDurumu" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="yorumlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uyeID" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="sporEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adminGiris" EntityType="Self.adminGiri" />
+          <EntitySet Name="branslars" EntityType="Self.branslar" />
+          <EntitySet Name="demirbaslars" EntityType="Self.demirbaslar" />
+          <EntitySet Name="hocalars" EntityType="Self.hocalar" />
+          <EntitySet Name="kategorilers" EntityType="Self.kategoriler" />
+          <EntitySet Name="paketlers" EntityType="Self.paketler" />
+          <EntitySet Name="programlars" EntityType="Self.programlar" />
+          <EntitySet Name="satislars" EntityType="Self.satislar" />
+          <EntitySet Name="silinen_Uyeler" EntityType="Self.silinen_Uyeler" />
+          <EntitySet Name="sirketBilgileris" EntityType="Self.sirketBilgileri" />
+          <EntitySet Name="uyelers" EntityType="Self.uyeler" />
+          <EntitySet Name="yorumlars" EntityType="Self.yorumlar" />
+          <FunctionImport Name="demirbasGetir" ReturnType="Collection(sporModel.demirbasGetir_Result)" />
+          <FunctionImport Name="demirbasRapor" ReturnType="Collection(sporModel.demirbasRapor_Result)">
+            <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+            <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="ekleme">
+            <Parameter Name="kullaniciID" Mode="In" Type="Int32" />
+            <Parameter Name="baslik" Mode="In" Type="String" />
+            <Parameter Name="icerik" Mode="In" Type="String" />
+            <Parameter Name="hocaID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getSatis" ReturnType="Collection(sporModel.getSatis_Result)">
+            <Parameter Name="tcNO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getUye" ReturnType="Collection(sporModel.getUye_Result)">
+            <Parameter Name="tcNO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="guncelleme">
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="telefon" Mode="In" Type="String" />
+            <Parameter Name="cep" Mode="In" Type="String" />
+            <Parameter Name="adres" Mode="In" Type="String" />
+            <Parameter Name="sifre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="hocaGetirPro" ReturnType="Collection(sporModel.hocaGetirPro_Result)">
+            <Parameter Name="brns" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="hocalarRapor" ReturnType="Collection(sporModel.hocalarRapor_Result)">
+            <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+            <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="hocayaAitUyeGetirme" EntitySet="satislars" ReturnType="Collection(sporModel.satislar)">
+            <Parameter Name="hocaID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="IDdenUyeGetir" ReturnType="Collection(sporModel.IDdenUyeGetir_Result)">
+            <Parameter Name="uyeid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="newProUyeGuncelle">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="adi" Mode="In" Type="String" />
+            <Parameter Name="soyadi" Mode="In" Type="String" />
+            <Parameter Name="telefon" Mode="In" Type="String" />
+            <Parameter Name="tc" Mode="In" Type="String" />
+            <Parameter Name="mail" Mode="In" Type="String" />
+            <Parameter Name="cinsiyet" Mode="In" Type="Byte" />
+            <Parameter Name="tarih" Mode="In" Type="DateTime" />
+            <Parameter Name="dogumTarihi" Mode="In" Type="DateTime" />
+            <Parameter Name="adres" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="paketlerRapor" ReturnType="Collection(sporModel.paketlerRapor_Result)">
+            <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+            <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="prcListele" ReturnType="Collection(sporModel.prcListele_Result)" />
+          <FunctionImport Name="pro_BransGetir" ReturnType="Collection(sporModel.pro_BransGetir_Result)" />
+          <FunctionImport Name="proMail" ReturnType="Collection(sporModel.proMail_Result)" />
+          <FunctionImport Name="proUyeIDAra" ReturnType="Collection(sporModel.proUyeIDAra_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="resimPro" ReturnType="Collection(String)">
+            <Parameter Name="gelenID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Satis_Ara" ReturnType="Collection(sporModel.Satis_Ara_Result)">
+            <Parameter Name="ara" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Satislari_Getir" ReturnType="Collection(sporModel.Satislari_Getir_Result)" />
+          <FunctionImport Name="sifreGetir" ReturnType="Collection(sporModel.sifreGetir_Result)" />
+          <FunctionImport Name="sirketbilgilergetir" ReturnType="Collection(sporModel.sirketbilgilergetir_Result)" />
+          <FunctionImport Name="updUyelik">
+            <Parameter Name="satisID" Mode="In" Type="Int32" />
+            <Parameter Name="satisFiyat" Mode="In" Type="Decimal" />
+            <Parameter Name="satisTarih" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Uye_Ara" ReturnType="Collection(sporModel.Uye_Ara_Result)">
+            <Parameter Name="ara" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="uyedataGetir" ReturnType="Collection(sporModel.uyedataGetir_Result)">
+            <Parameter Name="uyeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="uyeIDAra" ReturnType="Collection(DateTime)">
+            <Parameter Name="ara" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Uyeleri_Getir" ReturnType="Collection(sporModel.Uyeleri_Getir_Result)" />
+          <FunctionImport Name="uyelerRapor" ReturnType="Collection(sporModel.uyelerRapor_Result)">
+            <Parameter Name="tarih1" Mode="In" Type="DateTime" />
+            <Parameter Name="tarih2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Uyelik_Aktar">
+            <Parameter Name="alanID" Mode="In" Type="Int32" />
+            <Parameter Name="satisID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="uyelikDondur">
+            <Parameter Name="uyeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="demirbasGetir_Result">
+          <Property Type="Int32" Name="demirbasID" Nullable="false" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="serino" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="markasi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="fiyati" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="alinmaTarihi" Nullable="true" Precision="23" />
+          <Property Type="Byte" Name="bakimAraligi" Nullable="true" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="demirbasRapor_Result">
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="serino" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="markasi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="fiyati" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getSatis_Result">
+          <Property Type="Int32" Name="satisID" Nullable="false" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="uyeID" Nullable="false" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="getUye_Result">
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="uyeID" Nullable="false" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="hocaGetirPro_Result">
+          <Property Type="Int32" Name="hocaID" Nullable="false" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="cep" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="hocalarRapor_Result">
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+          <Property Type="Decimal" Name="satisUcreti" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="hocayaAitUyeGetirme_Result">
+          <Property Type="Int32" Name="satisID" Nullable="false" />
+          <Property Type="Int32" Name="uyeID" Nullable="true" />
+          <Property Type="Int32" Name="paketID" Nullable="true" />
+          <Property Type="Int32" Name="hocaID" Nullable="true" />
+          <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+          <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="uyeID1" Nullable="false" />
+          <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="dosya" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+          <Property Type="Byte" Name="cinsiyet" Nullable="true" />
+          <Property Type="String" Name="tcNo" Nullable="true" MaxLength="11" />
+          <Property Type="DateTime" Name="tarih1" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="IDdenUyeGetir_Result">
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="paketlerRapor_Result">
+          <Property Type="Int32" Name="paket" Nullable="true" />
+          <Property Type="String" Name="paketAdi" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="kategoriID" Nullable="true" />
+          <Property Type="Decimal" Name="paketUcreti" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="satisUcreti" Nullable="true" Precision="19" />
+          <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="prcListele_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="baslik" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="icerik" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+          <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="pro_BransGetir_Result">
+          <Property Type="Int32" Name="bransID" Nullable="false" />
+          <Property Type="Int32" Name="kategoriID" Nullable="true" />
+          <Property Type="String" Name="bransAdi" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Kategori_Adi" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="proMail_Result">
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="proUyeIDAra_Result">
+          <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="hocaID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Satis_Ara_Result">
+          <Property Type="Int32" Name="satisID" Nullable="false" />
+          <Property Type="Int32" Name="uyeID" Nullable="true" />
+          <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="hocaID" Nullable="true" />
+          <Property Type="Int32" Name="paketID" Nullable="true" />
+          <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+          <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Satislari_Getir_Result">
+          <Property Type="Int32" Name="satisID" Nullable="false" />
+          <Property Type="Int32" Name="uyeID" Nullable="true" />
+          <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="hocaID" Nullable="true" />
+          <Property Type="Int32" Name="paketID" Nullable="true" />
+          <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+          <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sifreGetir_Result">
+          <Property Type="Int32" Name="adminID" Nullable="false" />
+          <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="Byte" Name="seviye" Nullable="true" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sirketbilgilergetir_Result">
+          <Property Type="Int32" Name="sirketID" Nullable="false" />
+          <Property Type="String" Name="unvan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="adres" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="web" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="calismaBaslangic" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="calismaBitis" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="logo" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Uye_Ara_Result">
+          <Property Type="Int32" Name="uyeID" Nullable="false" />
+          <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="dosya" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+          <Property Type="Byte" Name="cinsiyet" Nullable="true" />
+          <Property Type="String" Name="tcNo" Nullable="true" MaxLength="11" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="uyedataGetir_Result">
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+          <Property Type="String" Name="uyeResim" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="baslamaTarih" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="bitisTarihi" Nullable="true" Precision="23" />
+          <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+          <Property Type="Decimal" Name="ucret" Nullable="true" Precision="19" />
+          <Property Type="String" Name="hocaAdi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="hocaSoyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="paketAdi" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Uyeleri_Getir_Result">
+          <Property Type="Int32" Name="uyeID" Nullable="false" />
+          <Property Type="String" Name="kulAdi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sifre" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="adres" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="resim" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="dosya" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="dogumTarihi" Nullable="true" Precision="23" />
+          <Property Type="Byte" Name="cinsiyet" Nullable="true" />
+          <Property Type="String" Name="tcNo" Nullable="true" MaxLength="11" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="uyelikDurumu" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="uyelerRapor_Result">
+          <Property Type="String" Name="adi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="soyadi" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="satisUcreti" Nullable="true" Precision="19" />
+          <Property Type="Byte" Name="odemeTuru" Nullable="true" />
+          <Property Type="DateTime" Name="tarih" Nullable="true" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sporModelStoreContainer" CdmEntityContainer="sporEntities">
+          <EntitySetMapping Name="adminGiris">
+            <EntityTypeMapping TypeName="sporModel.adminGiri">
+              <MappingFragment StoreEntitySet="adminGiris">
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="seviye" ColumnName="seviye" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="branslars">
+            <EntityTypeMapping TypeName="sporModel.branslar">
+              <MappingFragment StoreEntitySet="branslar">
+                <ScalarProperty Name="bransID" ColumnName="bransID" />
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+                <ScalarProperty Name="bransAdi" ColumnName="bransAdi" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="demirbaslars">
+            <EntityTypeMapping TypeName="sporModel.demirbaslar">
+              <MappingFragment StoreEntitySet="demirbaslar">
+                <ScalarProperty Name="demirbasID" ColumnName="demirbasID" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="serino" ColumnName="serino" />
+                <ScalarProperty Name="markasi" ColumnName="markasi" />
+                <ScalarProperty Name="fiyati" ColumnName="fiyati" />
+                <ScalarProperty Name="alinmaTarihi" ColumnName="alinmaTarihi" />
+                <ScalarProperty Name="bakimAraligi" ColumnName="bakimAraligi" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hocalars">
+            <EntityTypeMapping TypeName="sporModel.hocalar">
+              <MappingFragment StoreEntitySet="hocalar">
+                <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+                <ScalarProperty Name="bransID" ColumnName="bransID" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kategorilers">
+            <EntityTypeMapping TypeName="sporModel.kategoriler">
+              <MappingFragment StoreEntitySet="kategoriler">
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paketlers">
+            <EntityTypeMapping TypeName="sporModel.paketler">
+              <MappingFragment StoreEntitySet="paketler">
+                <ScalarProperty Name="paketID" ColumnName="paketID" />
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+                <ScalarProperty Name="paketAdi" ColumnName="paketAdi" />
+                <ScalarProperty Name="gun" ColumnName="gun" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="programlars">
+            <EntityTypeMapping TypeName="sporModel.programlar">
+              <MappingFragment StoreEntitySet="programlar">
+                <ScalarProperty Name="programID" ColumnName="programID" />
+                <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+                <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="satislars">
+            <EntityTypeMapping TypeName="sporModel.satislar">
+              <MappingFragment StoreEntitySet="satislar">
+                <ScalarProperty Name="satisID" ColumnName="satisID" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="paketID" ColumnName="paketID" />
+                <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+                <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+                <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="silinen_Uyeler">
+            <EntityTypeMapping TypeName="sporModel.silinen_Uyeler">
+              <MappingFragment StoreEntitySet="silinen_Uyeler">
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="dosya" ColumnName="dosya" />
+                <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sirketBilgileris">
+            <EntityTypeMapping TypeName="sporModel.sirketBilgileri">
+              <MappingFragment StoreEntitySet="sirketBilgileri">
+                <ScalarProperty Name="sirketID" ColumnName="sirketID" />
+                <ScalarProperty Name="unvan" ColumnName="unvan" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="calismaBaslangic" ColumnName="calismaBaslangic" />
+                <ScalarProperty Name="calismaBitis" ColumnName="calismaBitis" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uyelers">
+            <EntityTypeMapping TypeName="sporModel.uyeler">
+              <MappingFragment StoreEntitySet="uyeler">
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="dosya" ColumnName="dosya" />
+                <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yorumlars">
+            <EntityTypeMapping TypeName="sporModel.yorumlar">
+              <MappingFragment StoreEntitySet="yorumlar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="demirbasGetir" FunctionName="sporModel.Store.demirbasGetir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.demirbasGetir_Result">
+                <ScalarProperty Name="demirbasID" ColumnName="demirbasID" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="serino" ColumnName="serino" />
+                <ScalarProperty Name="markasi" ColumnName="markasi" />
+                <ScalarProperty Name="fiyati" ColumnName="fiyati" />
+                <ScalarProperty Name="alinmaTarihi" ColumnName="alinmaTarihi" />
+                <ScalarProperty Name="bakimAraligi" ColumnName="bakimAraligi" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="demirbasRapor" FunctionName="sporModel.Store.demirbasRapor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.demirbasRapor_Result">
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="serino" ColumnName="serino" />
+                <ScalarProperty Name="markasi" ColumnName="markasi" />
+                <ScalarProperty Name="fiyati" ColumnName="fiyati" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ekleme" FunctionName="sporModel.Store.ekleme" />
+          <FunctionImportMapping FunctionImportName="getSatis" FunctionName="sporModel.Store.getSatis">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.getSatis_Result">
+                <ScalarProperty Name="satisID" ColumnName="satisID" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+                <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getUye" FunctionName="sporModel.Store.getUye">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.getUye_Result">
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="guncelleme" FunctionName="sporModel.Store.guncelleme" />
+          <FunctionImportMapping FunctionImportName="hocaGetirPro" FunctionName="sporModel.Store.hocaGetirPro">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.hocaGetirPro_Result">
+                <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hocalarRapor" FunctionName="sporModel.Store.hocalarRapor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.hocalarRapor_Result">
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+                <ScalarProperty Name="satisUcreti" ColumnName="satisUcreti" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hocayaAitUyeGetirme" FunctionName="sporModel.Store.hocayaAitUyeGetirme">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="IDdenUyeGetir" FunctionName="sporModel.Store.IDdenUyeGetir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.IDdenUyeGetir_Result">
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="newProUyeGuncelle" FunctionName="sporModel.Store.newProUyeGuncelle" />
+          <FunctionImportMapping FunctionImportName="paketlerRapor" FunctionName="sporModel.Store.paketlerRapor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.paketlerRapor_Result">
+                <ScalarProperty Name="paket" ColumnName="paket" />
+                <ScalarProperty Name="paketAdi" ColumnName="paketAdi" />
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+                <ScalarProperty Name="paketUcreti" ColumnName="paketUcreti" />
+                <ScalarProperty Name="satisUcreti" ColumnName="satisUcreti" />
+                <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prcListele" FunctionName="sporModel.Store.prcListele">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.prcListele_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_BransGetir" FunctionName="sporModel.Store.pro_BransGetir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.pro_BransGetir_Result">
+                <ScalarProperty Name="bransID" ColumnName="bransID" />
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+                <ScalarProperty Name="bransAdi" ColumnName="bransAdi" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="Kategori_Adi" ColumnName="Kategori_Adi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proMail" FunctionName="sporModel.Store.proMail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.proMail_Result">
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proUyeIDAra" FunctionName="sporModel.Store.proUyeIDAra">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.proUyeIDAra_Result">
+                <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="resimPro" FunctionName="sporModel.Store.resimPro" />
+          <FunctionImportMapping FunctionImportName="Satis_Ara" FunctionName="sporModel.Store.Satis_Ara">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.Satis_Ara_Result">
+                <ScalarProperty Name="satisID" ColumnName="satisID" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+                <ScalarProperty Name="paketID" ColumnName="paketID" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+                <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Satislari_Getir" FunctionName="sporModel.Store.Satislari_Getir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.Satislari_Getir_Result">
+                <ScalarProperty Name="satisID" ColumnName="satisID" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+                <ScalarProperty Name="paketID" ColumnName="paketID" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+                <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sifreGetir" FunctionName="sporModel.Store.sifreGetir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.sifreGetir_Result">
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="seviye" ColumnName="seviye" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sirketbilgilergetir" FunctionName="sporModel.Store.sirketbilgilergetir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.sirketbilgilergetir_Result">
+                <ScalarProperty Name="sirketID" ColumnName="sirketID" />
+                <ScalarProperty Name="unvan" ColumnName="unvan" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="calismaBaslangic" ColumnName="calismaBaslangic" />
+                <ScalarProperty Name="calismaBitis" ColumnName="calismaBitis" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updUyelik" FunctionName="sporModel.Store.updUyelik" />
+          <FunctionImportMapping FunctionImportName="Uye_Ara" FunctionName="sporModel.Store.Uye_Ara">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.Uye_Ara_Result">
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="dosya" ColumnName="dosya" />
+                <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uyedataGetir" FunctionName="sporModel.Store.uyedataGetir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.uyedataGetir_Result">
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+                <ScalarProperty Name="uyeResim" ColumnName="uyeResim" />
+                <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+                <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+                <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="hocaAdi" ColumnName="hocaAdi" />
+                <ScalarProperty Name="hocaSoyadi" ColumnName="hocaSoyadi" />
+                <ScalarProperty Name="paketAdi" ColumnName="paketAdi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uyeIDAra" FunctionName="sporModel.Store.uyeIDAra" />
+          <FunctionImportMapping FunctionImportName="Uyeleri_Getir" FunctionName="sporModel.Store.Uyeleri_Getir">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.Uyeleri_Getir_Result">
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="dosya" ColumnName="dosya" />
+                <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uyelerRapor" FunctionName="sporModel.Store.uyelerRapor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sporModel.uyelerRapor_Result">
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="satisUcreti" ColumnName="satisUcreti" />
+                <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Uyelik_Aktar" FunctionName="sporModel.Store.Uyelik_Aktar" />
+          <FunctionImportMapping FunctionImportName="uyelikDondur" FunctionName="sporModel.Store.uyelikDondur" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7D93171-C725-4EE9-94B4-CD688FC73A62}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetFitnessProject</RootNamespace>
+    <AssemblyName>NetFitnessProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\..\..\..\Desktop\dll\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\..\..\..\Desktop\dll\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\..\..\..\Desktop\dll\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\..\..\Desktop\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Desktop\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\..\Desktop\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\..\Desktop\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adminGiri.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="adminGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminGiris.designer.cs">
+      <DependentUpon>adminGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="backUpKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="backUpKontrol.designer.cs">
+      <DependentUpon>backUpKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackupRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupRapor.designer.cs">
+      <DependentUpon>BackupRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bransKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bransKontrol.designer.cs">
+      <DependentUpon>bransKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="branslar.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB.cs" />
+    <Compile Include="DBEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="demirbasGetir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="demirbaslar.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="demirbaslarKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="demirbaslarKontrol.designer.cs">
+      <DependentUpon>demirbaslarKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="demirbasRapor_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="demirbasRpr.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getSatis_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getUye_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Harita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Harita.designer.cs">
+      <DependentUpon>Harita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HocaAyarlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocaAyarlari.designer.cs">
+      <DependentUpon>HocaAyarlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hocaGetirPro_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HocaKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocaKontrol.designer.cs">
+      <DependentUpon>HocaKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hocalar.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hocalarRapor_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hocaRpr.cs" />
+    <Compile Include="hocasayfasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hocasayfasi.designer.cs">
+      <DependentUpon>hocasayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hocayaAitUyeGetirme_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IDdenUyeGetir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="index.designer.cs">
+      <DependentUpon>index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kategoriler.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kategori_Kontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kategori_Kontrol.designer.cs">
+      <DependentUpon>kategori_Kontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ktgr.cs" />
+    <Compile Include="mailto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mailto.designer.cs">
+      <DependentUpon>mailto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paket.cs" />
+    <Compile Include="PaketKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaketKontrol.designer.cs">
+      <DependentUpon>PaketKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paketler.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paketlerRapor_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prcListele_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="programlar.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="programsayfasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="programsayfasi.designer.cs">
+      <DependentUpon>programsayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proMail_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proUyeIDAra_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pro_BransGetir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResimCek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResimCek.designer.cs">
+      <DependentUpon>ResimCek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Satis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Satis.designer.cs">
+      <DependentUpon>Satis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="satislar.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Satislari_Getir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Satis_Ara_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen.designer.cs">
+      <DependentUpon>Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifreDegis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifreDegis.designer.cs">
+      <DependentUpon>SifreDegis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sifreGetir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="silinen_Uyeler.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sirketbilgilergetir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sirketBilgileri.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TurnikeGecis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TurnikeGecis.designer.cs">
+      <DependentUpon>TurnikeGecis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uyedataGetir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uyeler.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Uyeleri_Getir_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uyelerRapor_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UyelikIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyelikIslemleri.designer.cs">
+      <DependentUpon>UyelikIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uyelik_Aktarma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uyelik_Aktarma.designer.cs">
+      <DependentUpon>Uyelik_Aktarma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uyePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uyePanel.designer.cs">
+      <DependentUpon>uyePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uyeRpr.cs" />
+    <Compile Include="Uye_Ara_Result.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yorumlar.cs">
+      <DependentUpon>DBEntity.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="adminGiris.resx">
+      <DependentUpon>adminGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="backUpKontrol.resx">
+      <DependentUpon>backUpKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackupRapor.resx">
+      <DependentUpon>BackupRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bransKontrol.resx">
+      <DependentUpon>bransKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="demirbaslarKontrol.resx">
+      <DependentUpon>demirbaslarKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Harita.resx">
+      <DependentUpon>Harita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocaAyarlari.resx">
+      <DependentUpon>HocaAyarlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocaKontrol.resx">
+      <DependentUpon>HocaKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hocasayfasi.resx">
+      <DependentUpon>hocasayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kategori_Kontrol.resx">
+      <DependentUpon>kategori_Kontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mailto.resx">
+      <DependentUpon>mailto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaketKontrol.resx">
+      <DependentUpon>PaketKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="programsayfasi.resx">
+      <DependentUpon>programsayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ResimCek.resx">
+      <DependentUpon>ResimCek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Satis.resx">
+      <DependentUpon>Satis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen.resx">
+      <DependentUpon>Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifreDegis.resx">
+      <DependentUpon>SifreDegis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TurnikeGecis.resx">
+      <DependentUpon>TurnikeGecis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyelikIslemleri.resx">
+      <DependentUpon>UyelikIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uyelik_Aktarma.resx">
+      <DependentUpon>Uyelik_Aktarma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uyePanel.resx">
+      <DependentUpon>uyePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DBEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBEntity.edmx.diagram">
+      <DependentUpon>DBEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBEntity.edmx</DependentUpon>
+      <LastGenOutput>DBEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBEntity.edmx</DependentUpon>
+      <LastGenOutput>DBEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

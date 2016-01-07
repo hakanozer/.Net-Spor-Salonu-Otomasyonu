@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sporModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="adminGiris">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kulAdi" Type="varchar" MaxLength="50" />
+    <Property Name="sifre" Type="varchar" MaxLength="32" />
+    <Property Name="adi" Type="varchar" MaxLength="255" />
+    <Property Name="soyadi" Type="varchar" MaxLength="255" />
+    <Property Name="seviye" Type="tinyint" />
+    <Property Name="mail" Type="varchar" MaxLength="255" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="branslar">
+    <Key>
+      <PropertyRef Name="bransID" />
+    </Key>
+    <Property Name="bransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategoriID" Type="int" />
+    <Property Name="bransAdi" Type="varchar" MaxLength="255" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="demirbaslar">
+    <Key>
+      <PropertyRef Name="demirbasID" />
+    </Key>
+    <Property Name="demirbasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="varchar" MaxLength="255" />
+    <Property Name="serino" Type="varchar" MaxLength="50" />
+    <Property Name="markasi" Type="varchar" MaxLength="50" />
+    <Property Name="fiyati" Type="varchar" MaxLength="50" />
+    <Property Name="alinmaTarihi" Type="datetime" />
+    <Property Name="bakimAraligi" Type="tinyint" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="hocalar">
+    <Key>
+      <PropertyRef Name="hocaID" />
+    </Key>
+    <Property Name="hocaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminID" Type="int" />
+    <Property Name="bransID" Type="int" />
+    <Property Name="adi" Type="varchar" MaxLength="50" />
+    <Property Name="soyadi" Type="varchar" MaxLength="50" />
+    <Property Name="telefon" Type="varchar" MaxLength="50" />
+    <Property Name="cep" Type="varchar" MaxLength="50" />
+    <Property Name="adres" Type="varchar" MaxLength="500" />
+    <Property Name="mail" Type="varchar" MaxLength="255" />
+    <Property Name="tarih" Type="datetime" />
+    <Property Name="sifre" Type="varchar" MaxLength="50" />
+    <Property Name="resim" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="kategoriler">
+    <Key>
+      <PropertyRef Name="kategoriID" />
+    </Key>
+    <Property Name="kategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="varchar" MaxLength="255" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="paketler">
+    <Key>
+      <PropertyRef Name="paketID" />
+    </Key>
+    <Property Name="paketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategoriID" Type="int" />
+    <Property Name="paketAdi" Type="varchar" MaxLength="255" />
+    <Property Name="gun" Type="tinyint" />
+    <Property Name="ucret" Type="money" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="programlar">
+    <Key>
+      <PropertyRef Name="programID" />
+    </Key>
+    <Property Name="programID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hocaID" Type="int" />
+    <Property Name="kullaniciID" Type="int" />
+    <Property Name="baslik" Type="varchar" MaxLength="255" />
+    <Property Name="icerik" Type="varchar" MaxLength="5000" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="satislar">
+    <Key>
+      <PropertyRef Name="satisID" />
+    </Key>
+    <Property Name="satisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeID" Type="int" />
+    <Property Name="paketID" Type="int" />
+    <Property Name="hocaID" Type="int" />
+    <Property Name="odemeTuru" Type="tinyint" />
+    <Property Name="ucret" Type="money" />
+    <Property Name="baslamaTarih" Type="datetime" />
+    <Property Name="bitisTarihi" Type="datetime" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="silinen_Uyeler">
+    <Key>
+      <PropertyRef Name="uyeID" />
+    </Key>
+    <Property Name="uyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kulAdi" Type="varchar" MaxLength="50" />
+    <Property Name="sifre" Type="varchar" MaxLength="32" />
+    <Property Name="adi" Type="varchar" MaxLength="255" />
+    <Property Name="soyadi" Type="varchar" MaxLength="255" />
+    <Property Name="telefon" Type="varchar" MaxLength="50" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="adres" Type="varchar" MaxLength="500" />
+    <Property Name="resim" Type="varchar" MaxLength="500" />
+    <Property Name="dosya" Type="varchar" MaxLength="500" />
+    <Property Name="dogumTarihi" Type="datetime" />
+    <Property Name="cinsiyet" Type="tinyint" />
+    <Property Name="tcNo" Type="varchar" MaxLength="11" />
+    <Property Name="tarih" Type="datetime" />
+    <Property Name="uyelikDurumu" Type="bit" />
+  </EntityType>
+  <EntityType Name="sirketBilgileri">
+    <Key>
+      <PropertyRef Name="sirketID" />
+    </Key>
+    <Property Name="sirketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="unvan" Type="varchar" MaxLength="50" />
+    <Property Name="telefon" Type="varchar" MaxLength="50" />
+    <Property Name="adres" Type="varchar" MaxLength="50" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="web" Type="varchar" MaxLength="50" />
+    <Property Name="calismaBaslangic" Type="varchar" MaxLength="50" />
+    <Property Name="calismaBitis" Type="varchar" MaxLength="50" />
+    <Property Name="logo" Type="varchar" MaxLength="255" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="uyeler">
+    <Key>
+      <PropertyRef Name="uyeID" />
+    </Key>
+    <Property Name="uyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kulAdi" Type="varchar" MaxLength="50" />
+    <Property Name="sifre" Type="varchar" MaxLength="32" />
+    <Property Name="adi" Type="varchar" MaxLength="255" />
+    <Property Name="soyadi" Type="varchar" MaxLength="255" />
+    <Property Name="telefon" Type="varchar" MaxLength="50" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="adres" Type="varchar" MaxLength="500" />
+    <Property Name="resim" Type="varchar" MaxLength="500" />
+    <Property Name="dosya" Type="varchar" MaxLength="500" />
+    <Property Name="dogumTarihi" Type="datetime" />
+    <Property Name="cinsiyet" Type="tinyint" />
+    <Property Name="tcNo" Type="varchar" MaxLength="11" />
+    <Property Name="tarih" Type="datetime" />
+    <Property Name="uyelikDurumu" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'spor.dbo.yorumlar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="yorumlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="icerik" Type="varchar" MaxLength="250" />
+    <Property Name="Tarih" Type="datetime" />
+    <Property Name="baslik" Type="varchar" MaxLength="50" />
+    <Property Name="uyeID" Type="int" />
+  </EntityType>
+  <Function Name="demirbasGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="demirbasRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tarih1" Type="datetime" Mode="In" />
+    <Parameter Name="tarih2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ekleme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="kullaniciID" Type="int" Mode="In" />
+    <Parameter Name="baslik" Type="varchar" Mode="In" />
+    <Parameter Name="icerik" Type="varchar" Mode="In" />
+    <Parameter Name="hocaID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fncHoca" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="brns" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getSatis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tcNO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getUye" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tcNO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="guncelleme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mail" Type="varchar" Mode="In" />
+    <Parameter Name="telefon" Type="varchar" Mode="In" />
+    <Parameter Name="cep" Type="varchar" Mode="In" />
+    <Parameter Name="adres" Type="varchar" Mode="In" />
+    <Parameter Name="sifre" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="hocaGetirPro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="brns" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="hocalarRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tarih1" Type="datetime" Mode="In" />
+    <Parameter Name="tarih2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="hocayaAitUyeGetirme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="hocaID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="IDdenUyeGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uyeid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="newProUyeGuncelle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="adi" Type="varchar" Mode="In" />
+    <Parameter Name="soyadi" Type="varchar" Mode="In" />
+    <Parameter Name="telefon" Type="varchar" Mode="In" />
+    <Parameter Name="tc" Type="varchar" Mode="In" />
+    <Parameter Name="mail" Type="varchar" Mode="In" />
+    <Parameter Name="cinsiyet" Type="tinyint" Mode="In" />
+    <Parameter Name="tarih" Type="datetime" Mode="In" />
+    <Parameter Name="dogumTarihi" Type="datetime" Mode="In" />
+    <Parameter Name="adres" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="paketlerRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tarih1" Type="datetime" Mode="In" />
+    <Parameter Name="tarih2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="prcListele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pro_BransGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proMail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proUyeIDAra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="resimPro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gelenID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Satis_Ara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ara" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Satislari_Getir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sifreGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sirketbilgilergetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="updUyelik" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="satisID" Type="int" Mode="In" />
+    <Parameter Name="satisFiyat" Type="money" Mode="In" />
+    <Parameter Name="satisTarih" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Uye_Ara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ara" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uyedataGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uyeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uyeIDAra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ara" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Uyeleri_Getir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uyelerRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tarih1" Type="datetime" Mode="In" />
+    <Parameter Name="tarih2" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Uyelik_Aktar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="alanID" Type="int" Mode="In" />
+    <Parameter Name="satisID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uyelikDondur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uyeID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="sporModelStoreContainer">
+    <EntitySet Name="adminGiris" EntityType="Self.adminGiris" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="branslar" EntityType="Self.branslar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="demirbaslar" EntityType="Self.demirbaslar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hocalar" EntityType="Self.hocalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kategoriler" EntityType="Self.kategoriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="paketler" EntityType="Self.paketler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="programlar" EntityType="Self.programlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="satislar" EntityType="Self.satislar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="silinen_Uyeler" EntityType="Self.silinen_Uyeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sirketBilgileri" EntityType="Self.sirketBilgileri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uyeler" EntityType="Self.uyeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yorumlar" EntityType="Self.yorumlar" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [yorumlar].[ID] AS [ID], 
+    [yorumlar].[icerik] AS [icerik], 
+    [yorumlar].[Tarih] AS [Tarih], 
+    [yorumlar].[baslik] AS [baslik], 
+    [yorumlar].[uyeID] AS [uyeID]
+    FROM [dbo].[yorumlar] AS [yorumlar]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

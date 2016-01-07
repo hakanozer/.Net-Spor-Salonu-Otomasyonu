@@ -1,0 +1,78 @@
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\NetFitnessProject.exe.config
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\NetFitnessProject.exe
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\NetFitnessProject.pdb
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.dll
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\AForge.xml
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\AForge.Video.xml
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\AForge.Video.DirectShow.xml
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.xml
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.csprojResolveAssemblyReference.cache
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.adminGiris.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.bansKonrol.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.demirbaslarKontrol.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Form1.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Harita.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.HocaKontrol.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.kategori_Kontrol.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.mailto.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.PaketKontrol.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Properties.Resources.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.ResimCek.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Satis.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Screen.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.SifreDegis.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.UyelikIslemleri.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Uyelik_Aktarma.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.uyePanel.resources
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.csproj.GenerateResource.Cache
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.exe
+c:\users\net5\documents\visual studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.pdb
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.backUpKontrol.resources
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.BackupRapor.resources
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\ClosedXML.dll
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\itextsharp.dll
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\itextsharp.pdfa.dll
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\bin\Debug\itextsharp.xtra.dll
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.HocaAyarlari.resources
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.hocasayfasi.resources
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.TurnikeGecis.resources
+C:\Users\NET5\Documents\Visual Studio 2015\Projects\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.programsayfasi.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\NetFitnessProject.exe.config
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.exe
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.pdb
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\NetFitnessProject.exe
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\NetFitnessProject.pdb
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.dll
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\AForge.xml
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\AForge.Video.xml
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.xml
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.csprojResolveAssemblyReference.cache
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.adminGiris.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.backUpKontrol.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.BackupRapor.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.bansKonrol.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.demirbaslarKontrol.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Form1.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Harita.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.HocaAyarlari.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.HocaKontrol.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.hocasayfasi.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.kategori_Kontrol.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.mailto.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.PaketKontrol.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.programsayfasi.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Properties.Resources.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.ResimCek.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Satis.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Screen.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.SifreDegis.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.TurnikeGecis.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.UyelikIslemleri.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.Uyelik_Aktarma.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.uyePanel.resources
+C:\Users\net5\Desktop\NetFitnessProject\NetFitnessProject\obj\Debug\NetFitnessProject.csproj.GenerateResource.Cache

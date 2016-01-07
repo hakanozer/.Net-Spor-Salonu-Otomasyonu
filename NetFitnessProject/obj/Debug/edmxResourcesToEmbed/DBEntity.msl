@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sporModelStoreContainer" CdmEntityContainer="sporEntities">
+    <EntitySetMapping Name="adminGiris">
+      <EntityTypeMapping TypeName="sporModel.adminGiri">
+        <MappingFragment StoreEntitySet="adminGiris">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="seviye" ColumnName="seviye" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="branslars">
+      <EntityTypeMapping TypeName="sporModel.branslar">
+        <MappingFragment StoreEntitySet="branslar">
+          <ScalarProperty Name="bransID" ColumnName="bransID" />
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="bransAdi" ColumnName="bransAdi" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="demirbaslars">
+      <EntityTypeMapping TypeName="sporModel.demirbaslar">
+        <MappingFragment StoreEntitySet="demirbaslar">
+          <ScalarProperty Name="demirbasID" ColumnName="demirbasID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="serino" ColumnName="serino" />
+          <ScalarProperty Name="markasi" ColumnName="markasi" />
+          <ScalarProperty Name="fiyati" ColumnName="fiyati" />
+          <ScalarProperty Name="alinmaTarihi" ColumnName="alinmaTarihi" />
+          <ScalarProperty Name="bakimAraligi" ColumnName="bakimAraligi" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hocalars">
+      <EntityTypeMapping TypeName="sporModel.hocalar">
+        <MappingFragment StoreEntitySet="hocalar">
+          <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="bransID" ColumnName="bransID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kategorilers">
+      <EntityTypeMapping TypeName="sporModel.kategoriler">
+        <MappingFragment StoreEntitySet="kategoriler">
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paketlers">
+      <EntityTypeMapping TypeName="sporModel.paketler">
+        <MappingFragment StoreEntitySet="paketler">
+          <ScalarProperty Name="paketID" ColumnName="paketID" />
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="paketAdi" ColumnName="paketAdi" />
+          <ScalarProperty Name="gun" ColumnName="gun" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="programlars">
+      <EntityTypeMapping TypeName="sporModel.programlar">
+        <MappingFragment StoreEntitySet="programlar">
+          <ScalarProperty Name="programID" ColumnName="programID" />
+          <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+          <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satislars">
+      <EntityTypeMapping TypeName="sporModel.satislar">
+        <MappingFragment StoreEntitySet="satislar">
+          <ScalarProperty Name="satisID" ColumnName="satisID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="paketID" ColumnName="paketID" />
+          <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+          <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+          <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="silinen_Uyeler">
+      <EntityTypeMapping TypeName="sporModel.silinen_Uyeler">
+        <MappingFragment StoreEntitySet="silinen_Uyeler">
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="dosya" ColumnName="dosya" />
+          <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sirketBilgileris">
+      <EntityTypeMapping TypeName="sporModel.sirketBilgileri">
+        <MappingFragment StoreEntitySet="sirketBilgileri">
+          <ScalarProperty Name="sirketID" ColumnName="sirketID" />
+          <ScalarProperty Name="unvan" ColumnName="unvan" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="calismaBaslangic" ColumnName="calismaBaslangic" />
+          <ScalarProperty Name="calismaBitis" ColumnName="calismaBitis" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uyelers">
+      <EntityTypeMapping TypeName="sporModel.uyeler">
+        <MappingFragment StoreEntitySet="uyeler">
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="dosya" ColumnName="dosya" />
+          <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yorumlars">
+      <EntityTypeMapping TypeName="sporModel.yorumlar">
+        <MappingFragment StoreEntitySet="yorumlar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="demirbasGetir" FunctionName="sporModel.Store.demirbasGetir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.demirbasGetir_Result">
+          <ScalarProperty Name="demirbasID" ColumnName="demirbasID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="serino" ColumnName="serino" />
+          <ScalarProperty Name="markasi" ColumnName="markasi" />
+          <ScalarProperty Name="fiyati" ColumnName="fiyati" />
+          <ScalarProperty Name="alinmaTarihi" ColumnName="alinmaTarihi" />
+          <ScalarProperty Name="bakimAraligi" ColumnName="bakimAraligi" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="demirbasRapor" FunctionName="sporModel.Store.demirbasRapor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.demirbasRapor_Result">
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="serino" ColumnName="serino" />
+          <ScalarProperty Name="markasi" ColumnName="markasi" />
+          <ScalarProperty Name="fiyati" ColumnName="fiyati" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ekleme" FunctionName="sporModel.Store.ekleme" />
+    <FunctionImportMapping FunctionImportName="getSatis" FunctionName="sporModel.Store.getSatis">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.getSatis_Result">
+          <ScalarProperty Name="satisID" ColumnName="satisID" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+          <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getUye" FunctionName="sporModel.Store.getUye">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.getUye_Result">
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="guncelleme" FunctionName="sporModel.Store.guncelleme" />
+    <FunctionImportMapping FunctionImportName="hocaGetirPro" FunctionName="sporModel.Store.hocaGetirPro">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.hocaGetirPro_Result">
+          <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="hocalarRapor" FunctionName="sporModel.Store.hocalarRapor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.hocalarRapor_Result">
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+          <ScalarProperty Name="satisUcreti" ColumnName="satisUcreti" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="hocayaAitUyeGetirme" FunctionName="sporModel.Store.hocayaAitUyeGetirme" />
+    <FunctionImportMapping FunctionImportName="IDdenUyeGetir" FunctionName="sporModel.Store.IDdenUyeGetir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.IDdenUyeGetir_Result">
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="newProUyeGuncelle" FunctionName="sporModel.Store.newProUyeGuncelle" />
+    <FunctionImportMapping FunctionImportName="paketlerRapor" FunctionName="sporModel.Store.paketlerRapor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.paketlerRapor_Result">
+          <ScalarProperty Name="paket" ColumnName="paket" />
+          <ScalarProperty Name="paketAdi" ColumnName="paketAdi" />
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="paketUcreti" ColumnName="paketUcreti" />
+          <ScalarProperty Name="satisUcreti" ColumnName="satisUcreti" />
+          <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="prcListele" FunctionName="sporModel.Store.prcListele">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.prcListele_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pro_BransGetir" FunctionName="sporModel.Store.pro_BransGetir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.pro_BransGetir_Result">
+          <ScalarProperty Name="bransID" ColumnName="bransID" />
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="bransAdi" ColumnName="bransAdi" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="Kategori_Adi" ColumnName="Kategori_Adi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proMail" FunctionName="sporModel.Store.proMail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.proMail_Result">
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proUyeIDAra" FunctionName="sporModel.Store.proUyeIDAra">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.proUyeIDAra_Result">
+          <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="resimPro" FunctionName="sporModel.Store.resimPro" />
+    <FunctionImportMapping FunctionImportName="Satis_Ara" FunctionName="sporModel.Store.Satis_Ara">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.Satis_Ara_Result">
+          <ScalarProperty Name="satisID" ColumnName="satisID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+          <ScalarProperty Name="paketID" ColumnName="paketID" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+          <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Satislari_Getir" FunctionName="sporModel.Store.Satislari_Getir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.Satislari_Getir_Result">
+          <ScalarProperty Name="satisID" ColumnName="satisID" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="hocaID" ColumnName="hocaID" />
+          <ScalarProperty Name="paketID" ColumnName="paketID" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+          <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sifreGetir" FunctionName="sporModel.Store.sifreGetir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.sifreGetir_Result">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="seviye" ColumnName="seviye" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sirketbilgilergetir" FunctionName="sporModel.Store.sirketbilgilergetir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.sirketbilgilergetir_Result">
+          <ScalarProperty Name="sirketID" ColumnName="sirketID" />
+          <ScalarProperty Name="unvan" ColumnName="unvan" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="calismaBaslangic" ColumnName="calismaBaslangic" />
+          <ScalarProperty Name="calismaBitis" ColumnName="calismaBitis" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="updUyelik" FunctionName="sporModel.Store.updUyelik" />
+    <FunctionImportMapping FunctionImportName="Uye_Ara" FunctionName="sporModel.Store.Uye_Ara">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.Uye_Ara_Result">
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="dosya" ColumnName="dosya" />
+          <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uyedataGetir" FunctionName="sporModel.Store.uyedataGetir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.uyedataGetir_Result">
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+          <ScalarProperty Name="uyeResim" ColumnName="uyeResim" />
+          <ScalarProperty Name="baslamaTarih" ColumnName="baslamaTarih" />
+          <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+          <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="hocaAdi" ColumnName="hocaAdi" />
+          <ScalarProperty Name="hocaSoyadi" ColumnName="hocaSoyadi" />
+          <ScalarProperty Name="paketAdi" ColumnName="paketAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uyeIDAra" FunctionName="sporModel.Store.uyeIDAra" />
+    <FunctionImportMapping FunctionImportName="Uyeleri_Getir" FunctionName="sporModel.Store.Uyeleri_Getir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.Uyeleri_Getir_Result">
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="kulAdi" ColumnName="kulAdi" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="dosya" ColumnName="dosya" />
+          <ScalarProperty Name="dogumTarihi" ColumnName="dogumTarihi" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="uyelikDurumu" ColumnName="uyelikDurumu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uyelerRapor" FunctionName="sporModel.Store.uyelerRapor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sporModel.uyelerRapor_Result">
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="satisUcreti" ColumnName="satisUcreti" />
+          <ScalarProperty Name="odemeTuru" ColumnName="odemeTuru" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Uyelik_Aktar" FunctionName="sporModel.Store.Uyelik_Aktar" />
+    <FunctionImportMapping FunctionImportName="uyelikDondur" FunctionName="sporModel.Store.uyelikDondur" />
+  </EntityContainerMapping>
+</Mapping>
