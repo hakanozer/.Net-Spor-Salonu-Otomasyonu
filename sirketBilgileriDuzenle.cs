@@ -131,6 +131,49 @@ namespace NetFitnessProject
                 MessageBox.Show("Güncelleme Hatası : " + ex);
             }
         }
+        int id = -1;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            try
+            {
+                using (var context = new sporEntities())
+                {
+                    sirketBilgileri ct = context.sirketBilgileris.FirstOrDefault(sil => sil.sirketID == id);
+                    textBox1.Text = ct.unvan;
+                    textBox2.Text = ct.telefon;
+                    textBox3.Text = ct.adres;
+                    textBox4.Text = ct.mail;
+                    textBox5.Text = ct.web;
+                    textBox6.Text = ct.calismaBaslangic;
+                    textBox7.Text = ct.calismaBitis;
+                    textBox8.Text = ct.logo;
+                    dateTimePicker1.Value = ct.tarih.Value;
+                    Form1_Load(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Güncelleme Hatası : " + ex);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new sporEntities())
+                {
+                    dataGridView1.DataSource = context.sirketbilgilergetir();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Getirme Hatası : " + ex);
+            }
+        }
+
         
     }
 }
