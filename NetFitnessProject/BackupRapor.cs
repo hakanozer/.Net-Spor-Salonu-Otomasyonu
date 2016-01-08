@@ -77,7 +77,50 @@ namespace NetFitnessProject
                         dataGridView1.DataSource = myList;
                     }
                 }
-               
+                else if (cmbRapor.Text == "Hocalar Rapor")
+                {
+                    using (var context = new sporEntities())
+                    {
+                        IEnumerable<hocalarRapor_Result> collection = context.hocalarRapor(dtpTarih1.Value, dtpTarih2.Value);
+                        IList<hocaRpr> myList = new List<hocaRpr>();
+                        ToplamCiro = 0;
+                        foreach (hocalarRapor_Result item in collection)
+                        {
+                            ToplamCiro += Convert.ToDecimal(item.satisUcreti);
+                            hocaRpr rapor = new hocaRpr();
+                            rapor.HocaAdı = item.adi;
+                            rapor.HocaSoyadı = item.soyadi;
+                            rapor.HocaTelefonu = item.telefon;
+                            rapor.satısTarihi = item.tarih.ToString();
+                            rapor.SatisUcreti = item.satisUcreti.ToString();
+                            rapor.Toplam = ToplamCiro.ToString();
+                            myList.Add(rapor);
+                        }
+                        dataGridView1.DataSource = myList;
+                    }
+                }
+                else if(cmbRapor.Text == "Demirbaş Listesi")
+                {
+                    using (var context = new sporEntities())
+                    {
+                        IEnumerable<demirbasRapor_Result> collection = context.demirbasRapor(dtpTarih1.Value, dtpTarih2.Value);
+                        IList<demirbasRpr> myList = new List<demirbasRpr>();
+                        ToplamCiro = 0;
+                        foreach (demirbasRapor_Result item in collection)
+                        {
+                            ToplamCiro += Convert.ToDecimal(item.fiyati);
+                            demirbasRpr rapor = new demirbasRpr();
+                            rapor.DemirbasAdı = item.adi;
+                            rapor.DemirbasSerino = item.serino;
+                            rapor.DemirbasMarkası = item.markasi;
+                            rapor.DemirbasFiyatı = item.fiyati;
+                            rapor.Toplam = ToplamCiro.ToString();
+                            myList.Add(rapor);
+
+                        }
+                        dataGridView1.DataSource = myList;
+                    }
+                }
                 else
                 {
 
@@ -129,6 +172,52 @@ namespace NetFitnessProject
                     MessageBox.Show("Raporunuz oluşturuldu. Dosya Yolu : C:\\Excel\\" + excelName);
 
                 }
+                else if (rbPdf.Checked)
+                {
+                    PdfPTable pdfTable = new PdfPTable(dataGridView1.ColumnCount);
+                    pdfTable.DefaultCell.Padding = 3;
+                    pdfTable.WidthPercentage = 90;
+                    pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTable.DefaultCell.BorderWidth = 1;
+
+                    foreach (DataGridViewColumn column in dataGridView1.Columns)
+                    {
+                        PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                        //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                        pdfTable.AddCell(cell);
+                    }
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.Value != null)
+                            {
+                                pdfTable.AddCell(cell.Value.ToString());
+                            }
+                            else
+                            {
+                                pdfTable.AddCell("-");
+                            }
+                        }
+                    }
+                    string folderPath = "C:\\PDFs\\";
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
+                    string wordName = "Rapor" + DateTime.Now.Millisecond;
+                    using (FileStream stream = new FileStream(folderPath + wordName + ".pdf", FileMode.Create))
+                    {
+                        Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                        PdfWriter.GetInstance(pdfDoc, stream);
+                        pdfDoc.Open();
+                        pdfDoc.Add(pdfTable);
+                        pdfDoc.Close();
+                        stream.Close();
+                    }
+                    MessageBox.Show("Raporunuz oluşturuldu. Dosya Yolu : C:\\PDFs\\" + wordName);
+                }
+               
                 else
                 {
                     MessageBox.Show("Lütfen rapor türünü seçiniz.");
