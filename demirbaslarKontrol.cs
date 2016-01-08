@@ -22,6 +22,57 @@ namespace NetFitnessProject
         }
 
         
+        
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (seçilen)
+            {
+                if (String.IsNullOrEmpty(txtAdi.Text) || String.IsNullOrEmpty(txtMarkasi.Text))
+                {
+                    if (String.IsNullOrEmpty(txtAdi.Text))
+                    {
+                        MessageBox.Show("Lütfen Demirbaş Adını Doldurunuz!");
+                        txtAdi.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen Demirbaş Markasını Doldurunuz!");
+                        txtMarkasi.Focus();
+                    }
+                }
+                else
+                {
+                    Güncelleme();
+                    temizle();
+                    Form1_Load(null, null);
+                }
+            }
+        }
+
+        private void btnDemirbasBul_Click(object sender, EventArgs e)
+        {
+            temizle();
+            Form1_Load(null, null);
+        }
+        public int ekle(demirbaslar dm)
+        {
+            int sonuc = -1;
+            try
+            {
+                using (var context = new sporEntities())
+                {
+                    context.demirbaslars.Add(dm);
+                    sonuc = context.SaveChanges();
+                    Form1_Load(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kaydetme Hatası" + ex);
+            }
+            return sonuc;
+        }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -109,7 +160,30 @@ namespace NetFitnessProject
             }
         }
 
-       
+        int id = -1;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            try
+            {
+                using (var context = new sporEntities())
+                {
+                    demirbaslar ct = context.demirbaslars.FirstOrDefault(sil => sil.demirbasID == id);
+                    txtAdi.Text = ct.adi;
+                    txtSeriNo.Text = ct.serino;
+                    txtMarkasi.Text = ct.markasi;
+                    txtFiyati.Text = ct.fiyati;
+                    dtpAlinmaTarihi.Value = ct.alinmaTarihi.Value;
+                    txtBakimAraligi.Text = ct.bakimAraligi.ToString();
+                    dtpTarih.Value = ct.tarih.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Güncelleme Hatası : " + ex);
+            }
+        }
         public void temizle()
         {
             txtAdi.Clear();
@@ -119,6 +193,57 @@ namespace NetFitnessProject
             txtBakimAraligi.Clear();
             txtAdi.Focus();
         }
-        
+        public void Güncelleme()
+        {
+            try
+            {
+                using (var context = new sporEntities())
+                {
+                    demirbaslar dm = context.demirbaslars.FirstOrDefault(sil => sil.demirbasID == id);
+                    if (dm != null)
+                    {
+                        dm.adi = txtAdi.Text;
+                        dm.markasi = txtMarkasi.Text;
+                        dm.fiyati = txtFiyati.Text;
+                        dm.alinmaTarihi = dtpAlinmaTarihi.Value;
+                        dm.bakimAraligi = Convert.ToByte(txtBakimAraligi.Text);
+                        dm.tarih = dtpTarih.Value;
+
+                        context.SaveChanges();
+                        Form1_Load(null, null);
+                        MessageBox.Show("Güncelleme işlemi başarılı!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen Seçim Yapınız!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Güncelleme Hatası : " + ex);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new sporEntities())
+                {
+                    dataGridView1.DataSource = context.demirbasGetir();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Getirme Hatası : " + ex);
+            }
+        }
+
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            seçilen = true;
+        }
     }
 }
