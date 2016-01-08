@@ -5,3 +5,9 @@ Bu proje C# ve Entity teknolojisi kullanılarak oluşturulmuş bir uygulamadadı
 
 # Proje Görüntüleri
 <a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/admin_ana_sayfa.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/admin_ana_sayfa.png" width=100/></a>
+
+
+<a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/paket_kontrol.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/paket_kontrol.png" width=100/></a>
+
+
+<a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/rapor.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/rapor.png" width=100/></a>
