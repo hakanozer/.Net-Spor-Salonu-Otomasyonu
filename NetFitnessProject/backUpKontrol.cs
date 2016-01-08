@@ -71,6 +71,42 @@ namespace NetFitnessProject
             }
         }
 
+        private void btnYedek_Click(object sender, EventArgs e)
+        {
+            db.ac();
+            try
+            {
+                foreach (Control radio in grpYedek.Controls)
+                {
+                    if (radio is RadioButton)
+                    {
+                        RadioButton rdb = (RadioButton)radio;
+                        
+                            
+                       if (rdb.Checked)
+                        {
+                            string FileName = rdb.Text + ".Yedek." + DateTime.Now;
+                            SqlCommand command;
+                            command = new SqlCommand(@"select *into [" + FileName + "] from [" + rdb.Text + "]", db.conn);
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("Yedekleme işlemi başarılı");
+                            MessageBox.Show(""+rdb.Text.ToUpper()+ " tablonuzun yedeği " + FileName + " olarak veritabanına yedeklendi.");
+                            db.kapat();
+                        }
+                  
+
+                    }
+                 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Tablo yedekleme işlemi başarısız :" + ex);
+            }
+
+        }
+
         private void backUpKontrol_Load(object sender, EventArgs e)
         {
 
