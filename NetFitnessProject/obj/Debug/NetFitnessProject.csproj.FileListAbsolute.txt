@@ -232,3 +232,6 @@ C:\Users\net5\Desktop\ProjeSonDurum\spor_proje\NetFitnessProject\obj\Debug\NetFi
 C:\Users\net5\Desktop\ProjeSonDurum\spor_proje\NetFitnessProject\obj\Debug\NetFitnessProject.Uyelik_Aktarma.resources
 C:\Users\net5\Desktop\ProjeSonDurum\spor_proje\NetFitnessProject\obj\Debug\NetFitnessProject.uyePanel.resources
 C:\Users\net5\Desktop\ProjeSonDurum\spor_proje\NetFitnessProject\obj\Debug\NetFitnessProject.csproj.GenerateResource.Cache
+C:\Users\net55\Documents\GitHub\SporSalonuOtomasyonu\NetFitnessProject\bin\Debug\NetFitnessProject.exe.config
+C:\Users\net55\Documents\GitHub\SporSalonuOtomasyonu\NetFitnessProject\obj\Debug\NetFitnessProject.exe
+C:\Users\net55\Documents\GitHub\SporSalonuOtomasyonu\NetFitnessProject\obj\Debug\NetFitnessProject.pdb
