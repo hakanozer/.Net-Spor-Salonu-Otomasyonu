@@ -21,9 +21,6 @@ namespace NetFitnessProject
             InitializeComponent();
         }
 
-        
-        
-
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             if (seçilen)
