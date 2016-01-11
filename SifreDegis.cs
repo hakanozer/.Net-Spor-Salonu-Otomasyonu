@@ -21,6 +21,8 @@ namespace NetFitnessProject
         {
             InitializeComponent();
         }
+        // static olarak tutulan id değeri*****************************************************
+        // kullaniciDogrula.id*************************************************
         int idd = 1;
         private void btnDegistir_Click(object sender, EventArgs e)
         {
@@ -78,6 +80,13 @@ namespace NetFitnessProject
             }
             return sBuilder.ToString();
         }
-      
+        public void temizle()
+        {
+            txtYeniSifre2.Clear();
+            txtmail.Clear();
+            txtEskiSifre.Clear();
+            txtYeniSifre.Clear();
+            txtYeniSifre2.Focus();
+        }
     }
 }
