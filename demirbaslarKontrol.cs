@@ -21,6 +21,52 @@ namespace NetFitnessProject
             InitializeComponent();
         }
 
+        public int sil(String id)
+        {
+            int sonuc = -1;
+            try
+            {
+                using (var context = new sporEntities())
+                {
+                    demirbaslar ct = context.demirbaslars.FirstOrDefault(sil => sil.serino == id);
+                    context.demirbaslars.Remove(ct);
+                    sonuc = context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Silme Hatası : " + ex);
+            }
+
+            return sonuc;
+        }
+
+        int did = -1;
+        bool seçilen = false;
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (seçilen)
+            {
+                String id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                if (id != null)
+                {
+                    did = Convert.ToInt32(id);
+                    sp.demirbaslars.Remove(sp.demirbaslars.Find(did));
+                    sp.SaveChanges();
+                    btnDemirbasBul_Click(null, null);
+
+                    MessageBox.Show("Silme işlemi başarılı!");
+                    Form1_Load(null, null);
+                }
+            }
+                else
+                {
+                    MessageBox.Show("Lütfen Seçim Yapınız!");
+                }
+            seçilen = false;
+        }
+
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             if (seçilen)

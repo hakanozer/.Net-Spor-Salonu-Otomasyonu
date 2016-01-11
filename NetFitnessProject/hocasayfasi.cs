@@ -12,7 +12,7 @@ using System.Collections;
 using System.Data.SqlClient;
 namespace NetFitnessProject
 {
-    public partial class hocasayfasi : Screen
+    public partial class hocasayfasi : Form
     {
         public hocasayfasi()
         {
