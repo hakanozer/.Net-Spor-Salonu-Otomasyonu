@@ -18,6 +18,12 @@ namespace NetFitnessProject
             InitializeComponent();
         }
 
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            Güncelleme();
+            Form1_Load(null, null);
+        }
+
         public void Güncelleme()
         {
             try
@@ -174,6 +180,17 @@ namespace NetFitnessProject
             }
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult secim;
+            secim = openFileDialog1.ShowDialog();
+            if (secim == DialogResult.OK)
+            {
+                String yol = Path.GetFullPath(openFileDialog1.FileName);
+                FileStream yol1 = new FileStream(yol, FileMode.Open, FileAccess.Read);
+                Bitmap logo = new Bitmap(yol1, true);
+                textBox8.Text = yol;
+            }
+        }
     }
 }
