@@ -25,7 +25,7 @@ Bu proje C# ve Entity teknolojisi kullanılarak oluşturulmuş bir uygulamadadı
   
   <tr>
   
-  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/7.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/7.png" width=125/></a></th>
+  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/7.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/7.fw.png" width=125/></a></th>
   
     <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/8.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/8.fw.png" width=125/></a></th>
     
@@ -42,7 +42,7 @@ Bu proje C# ve Entity teknolojisi kullanılarak oluşturulmuş bir uygulamadadı
   
    <tr>
   
-  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/13.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/13.png" width=125/></a></th>
+  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/13.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/13.fw.png" width=125/></a></th>
   
     <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/14.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/14.fw.png" width=125/></a></th>
     
@@ -59,7 +59,7 @@ Bu proje C# ve Entity teknolojisi kullanılarak oluşturulmuş bir uygulamadadı
   
   <tr>
   
-  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/19.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/19.png" width=125/></a></th>
+  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/19.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/19.fw.png" width=125/></a></th>
   
     <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/20.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/20.fw.png" width=125/></a></th>
     
@@ -76,7 +76,7 @@ Bu proje C# ve Entity teknolojisi kullanılarak oluşturulmuş bir uygulamadadı
   
     <tr>
   
-  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/25.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/25.png" width=125/></a></th>
+  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/25.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/25.fw.png" width=125/></a></th>
   
     <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/26.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/26.fw.png" width=125/></a></th>
     
