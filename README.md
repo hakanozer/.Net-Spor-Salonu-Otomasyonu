@@ -8,11 +8,19 @@ Bu proje C# ve Entity teknolojisi kullanılarak oluşturulmuş bir uygulamadadı
 
 <table class="tg">
   <tr>
-    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/admin_ana_sayfa.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/admin_ana_sayfa.png" width=125/></a></th>
-    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/paket_kontrol.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/paket_kontrol.png" width=125/></a></th>
-    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/rapor.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/rapor.png" width=125/></a></th>
-    <th class="tg-yw4l"></th>
-    <th class="tg-yw4l"></th>
+  
+  <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/1.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/1.png" width=125/></a></th>
+  
+    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/2.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/2.fw.png" width=125/></a></th>
+    
+    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/3.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/3.fw.png" width=125/></a></th>
+    
+    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/4.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/4.fw.png" width=125/></a></th>
+    
+    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/5.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/5.fw.png" width=125/></a></th>
+    
+    <th class="tg-yw4l"><a href="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/6.fw.png"><img src="https://github.com/hakanozer/SporSalonuOtomasyonu/blob/master/proje_goruntuleri/6.fw.png" width=125/></a></th>
+    
   </tr>
 </table>
 
